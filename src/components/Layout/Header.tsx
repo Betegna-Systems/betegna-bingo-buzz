@@ -18,15 +18,17 @@ const Header = () => {
 
   const navigation = [
     { name: "Home", href: "/" },
-    { name: "Games", href: "/lobby" },
+    { name: "How It Works", href: "/how-it-works" },
+    { name: "Upcoming Draws", href: "/draws" },
     { name: "My Cards", href: "/cards" },
-    { name: "Results", href: "/results" },
-    { name: "Contact", href: "/contact" },
+    { name: "Profile", href: "/profile" },
   ];
 
   const handleLogout = () => {
     localStorage.removeItem("isAuthenticated");
     localStorage.removeItem("userBalance");
+    localStorage.removeItem("userPhone");
+    localStorage.removeItem("userName");
     window.location.href = "/";
   };
 

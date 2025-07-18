@@ -8,6 +8,8 @@ import Footer from "./components/Layout/Footer";
 import Homepage from "./pages/Homepage";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
+import HowItWorks from "./pages/HowItWorks";
+import UpcomingDraws from "./pages/UpcomingDraws";
 import GameLobby from "./pages/GameLobby";
 import BingoCards from "./pages/BingoCards";
 import Profile from "./pages/Profile";
@@ -28,6 +30,8 @@ const App = () => (
               <Route path="/" element={<Homepage />} />
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Register />} />
+              <Route path="/how-it-works" element={<HowItWorks />} />
+              <Route path="/draws" element={<UpcomingDraws />} />
               <Route path="/lobby" element={<GameLobby />} />
               <Route path="/cards" element={<BingoCards />} />
               <Route path="/profile" element={<Profile />} />

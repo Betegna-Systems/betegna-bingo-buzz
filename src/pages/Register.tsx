@@ -12,7 +12,6 @@ const Register = () => {
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
-    email: "",
     phone: "",
     password: "",
     confirmPassword: "",
@@ -55,7 +54,7 @@ const Register = () => {
     // For demo purposes, accept valid form data
     localStorage.setItem("isAuthenticated", "true");
     localStorage.setItem("userBalance", "100"); // Starting balance
-    localStorage.setItem("userEmail", formData.email);
+    localStorage.setItem("userPhone", formData.phone);
     localStorage.setItem("userName", `${formData.firstName} ${formData.lastName}`);
     
     toast({
@@ -126,23 +125,6 @@ const Register = () => {
                     placeholder="Last name"
                     value={formData.lastName}
                     onChange={handleInputChange}
-                    required
-                  />
-                </div>
-              </div>
-
-              <div className="space-y-2">
-                <Label htmlFor="email">Email</Label>
-                <div className="relative">
-                  <Mail className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
-                  <Input
-                    id="email"
-                    name="email"
-                    type="email"
-                    placeholder="your.email@example.com"
-                    value={formData.email}
-                    onChange={handleInputChange}
-                    className="pl-10"
                     required
                   />
                 </div>

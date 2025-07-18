@@ -4,12 +4,12 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Eye, EyeOff, Mail, Lock } from "lucide-react";
+import { Eye, EyeOff, Phone, Lock } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 const Login = () => {
   const [formData, setFormData] = useState({
-    email: "",
+    phone: "",
     password: "",
   });
   const [showPassword, setShowPassword] = useState(false);
@@ -24,11 +24,11 @@ const Login = () => {
     // Simulate API call
     await new Promise((resolve) => setTimeout(resolve, 1000));
 
-    // For demo purposes, accept any email/password
-    if (formData.email && formData.password) {
+    // For demo purposes, accept any phone/password
+    if (formData.phone && formData.password) {
       localStorage.setItem("isAuthenticated", "true");
       localStorage.setItem("userBalance", "500"); // Demo balance
-      localStorage.setItem("userEmail", formData.email);
+      localStorage.setItem("userPhone", formData.phone);
       
       toast({
         title: "Welcome back!",
@@ -39,7 +39,7 @@ const Login = () => {
     } else {
       toast({
         title: "Invalid credentials",
-        description: "Please check your email and password.",
+        description: "Please check your phone number and password.",
         variant: "destructive",
       });
     }
@@ -74,21 +74,21 @@ const Login = () => {
           <CardHeader>
             <CardTitle>Login</CardTitle>
             <CardDescription>
-              Enter your credentials to access your account
+              Enter your phone number and password to continue
             </CardDescription>
           </CardHeader>
           <CardContent>
             <form onSubmit={handleSubmit} className="space-y-4">
               <div className="space-y-2">
-                <Label htmlFor="email">Email</Label>
+                <Label htmlFor="phone">Phone Number</Label>
                 <div className="relative">
-                  <Mail className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
+                  <Phone className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
                   <Input
-                    id="email"
-                    name="email"
-                    type="email"
-                    placeholder="your.email@example.com"
-                    value={formData.email}
+                    id="phone"
+                    name="phone"
+                    type="tel"
+                    placeholder="+251 911 234 567"
+                    value={formData.phone}
                     onChange={handleInputChange}
                     className="pl-10"
                     required
@@ -155,7 +155,7 @@ const Login = () => {
         {/* Demo Info */}
         <div className="mt-6 p-4 bg-muted rounded-lg border border-border">
           <p className="text-sm text-muted-foreground text-center">
-            <strong>Demo:</strong> Use any email and password to login
+            <strong>Demo:</strong> Use any phone number and password to login
           </p>
         </div>
       </div>
