@@ -14,6 +14,10 @@ import GameLobby from "./pages/GameLobby";
 import BingoCards from "./pages/BingoCards";
 import Profile from "./pages/Profile";
 import NotFound from "./pages/NotFound";
+import Rooms from "./pages/Rooms";
+import CardSelector from "./pages/CardSelector";
+import RoomLobby from "./pages/RoomLobby";
+import GamePlay from "./pages/GamePlay";
 
 const queryClient = new QueryClient();
 
@@ -35,6 +39,10 @@ const App = () => (
               <Route path="/lobby" element={<GameLobby />} />
               <Route path="/cards" element={<BingoCards />} />
               <Route path="/profile" element={<Profile />} />
+              <Route path="/rooms" element={<Rooms />} />
+              <Route path="/rooms/:roomId/select-card" element={<CardSelector />} />
+              <Route path="/rooms/:roomId/lobby" element={<RoomLobby />} />
+              <Route path="/game/:roomId" element={<GamePlay />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>
